@@ -13,6 +13,6 @@ My first Slack bot, made with node.js and slack bolt. It can respond to commands
 
 # Built with
 
-node 
-slack bolt
+Node.js
+Slack Bolt
 Axios
