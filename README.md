@@ -20,3 +20,7 @@ My first Slack bot, made with **Node.js** and **Slack Bolt**. It can respond to 
 * Node.js
 * Slack Bolt
 * Axios
+
+## Experience with the Project
+
+Kirby has taught me about Slack bots, APIs, and JavaScript. In addition, I have gained knowledge about how to host and deploy bots to my **Azure VPS**.Loved building it!
