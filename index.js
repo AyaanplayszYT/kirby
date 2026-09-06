@@ -61,12 +61,12 @@ app.command("/kirby-quote", async ({ ack, respond }) => {
   await ack();
 
   try {
-    const response = await axios.get("https://api.quotable.io/random");
+    const response = await axios.get("https://zenquotes.io/api/random");
 
     await respond({
-      text: `"${response.data.content}"\n- ${response.data.author}`
+      text: `"${response.data[0].q}"\n- ${response.data[0].a}`
     });
-  } catch {
+  } catch (err) {
     await respond({ text: "Failed to fetch a quote." });
   }
 });
