@@ -70,33 +70,33 @@ app.command("/kirby-quote", async ({ ack, respond }) => {
     await respond({ text: "Failed to fetch a quote." });
   }
 });
-    
+
 app.command("/kirby-advice", async ({ ack, respond }) => {
-    await ack();
+  await ack();
 
-    try {
-        const response = await axios.get("https://api.adviceslip.com/advice");
+  try {
+    const response = await axios.get("https://api.adviceslip.com/advice");
 
-        await respond({
-            text: `advice: "$response.data.slip.advice"`
-        });
-    } catch {
-        await respond({ text: "Failed to fetch advice. No advice for u :(" });
-    }
+    await respond({
+      text: `Advice: "${response.data.slip.advice}"`
+    });
+  } catch {
+    await respond({ text: "Failed to fetch advice. No advice for u :(" });
+  }
 });
 
 app.command("/kirby-dogfact", async ({ ack, respond }) => {
-    await ack();
+  await ack();
 
-    try {
-        const response = await axios.get("https://dogapi.dog/api/v2/facts");
+  try {
+    const response = await axios.get("https://dogapi.dog/api/v2/facts");
 
-        await respond({
-            text: `Dog Fact:\n${response.data.data[0].attributes.body}`
-        });
-    } catch {
-        await respond({ text: "Failed to fetch a dog fact :(" });
-    }
+    await respond({
+      text: `Dog Fact:\n${response.data.data[0].attributes.body}`
+    });
+  } catch {
+    await respond({ text: "Failed to fetch a dog fact :(" });
+  }
 });
 
 (async () => {
